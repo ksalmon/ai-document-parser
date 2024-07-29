@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import type { UploadProps } from "antd";
 import { message, Upload, Button, Modal } from "antd";
 import { downloadData } from "../utils/data";
-import ReactJson from "@microlink/react-json-view";
+import JsonView from "react18-json-view";
+import "react18-json-view/src/style.css";
 
 enum FileStatus {
   Uploading = "uploading",
@@ -62,14 +63,16 @@ export const DocumentParser = () => {
         <Button disabled={!isReady}>Click to Upload</Button>
       </Dragger>
 
-      <Modal
-        title="AI JSON Response"
-        open={!!currentJson}
-        onOk={() => setCurrentJson(null)}
-        onCancel={() => setCurrentJson(null)}
-      >
-        {currentJson && <ReactJson src={currentJson} />}
-      </Modal>
+      {typeof window !== "undefined" && (
+        <Modal
+          title="AI JSON Response"
+          open={!!currentJson}
+          onOk={() => setCurrentJson(null)}
+          onCancel={() => setCurrentJson(null)}
+        >
+          {currentJson && <JsonView src={currentJson} />}
+        </Modal>
+      )}
     </div>
   );
 };
