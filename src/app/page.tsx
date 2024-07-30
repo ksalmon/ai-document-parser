@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import { DocumentParser } from "./components/DocumentParser";
 
 export default function Home() {
