@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import type { UploadProps } from "antd";
+import type { UploadProps, UploadFile } from "antd";
 import { message, Upload, Button, Modal } from "antd";
 import { downloadData } from "../utils/data";
 import JsonView from "react18-json-view";
@@ -15,7 +15,7 @@ enum FileStatus {
 
 export const DocumentParser = () => {
   const [isReady, setReady] = useState(true);
-  const [currentJson, setCurrentJson] = useState(null);
+  const [currentJson, setCurrentJson] = useState<object | null>(null);
 
   const { Dragger } = Upload;
   const props: UploadProps = {
@@ -23,7 +23,7 @@ export const DocumentParser = () => {
     multiple: false,
     disabled: !isReady,
     action: "api/parse",
-    onChange({ file }) {
+    onChange({ file }: { file: UploadFile }) {
       const { status } = file;
       if (status === FileStatus.Uploading && isReady) {
         setReady(false);
@@ -45,8 +45,10 @@ export const DocumentParser = () => {
         message.error(errorMessage);
       }
     },
-    onPreview({ response }) {
-      setCurrentJson(response);
+    onPreview({ response }: { response?: object }) {
+      if (response) {
+        setCurrentJson(response);
+      }
     },
   };
 

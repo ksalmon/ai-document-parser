@@ -15,6 +15,7 @@ const postSchema = zfd.formData({
     ),
 });
 
+// Todo: Add some middleware for schema validation and generic error handling so adding controllers/endpoints is not a pain
 export async function POST(request: Request) {
   const { success, error, data } = postSchema.safeParse(
     await request.formData()
