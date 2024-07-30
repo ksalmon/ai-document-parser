@@ -14,7 +14,7 @@ export class DocumentParseService {
   public async createChatCompletion({
     messages,
     tools = [],
-    model = "gpt-4-1106-preview",
+    model = "gpt-4o-mini",
   }: {
     messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[];
     tools?: OpenAI.Chat.Completions.ChatCompletionTool[];
@@ -37,7 +37,7 @@ export class DocumentParseService {
     const prompt = `
       ${documentContent}
 
-      Analyze the above document and return the title, a brief summary, a array of all the key document entities and an array of sections that make up the document.
+      Analyze the above document and return the title, a detailed summary, a array of all the key document entities and an array of sections that make up the document.
     `;
 
     const result = await this.createChatCompletion({
