@@ -4,7 +4,7 @@ NextJs app using OpenAI to evaluate txt documents and generate a JSON response o
 View it live [here](https://document.raygun-playground.com/) ✨🪄✨
 
 Tested on all modern W3 browsers. Looks the best on Chrome 🧐
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" width="128"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" width="50"/>
 
 
 ## Getting Started Locally
