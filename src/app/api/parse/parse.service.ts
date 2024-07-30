@@ -14,7 +14,7 @@ export class DocumentParseService {
   public async createChatCompletion({
     messages,
     tools = [],
-    model = "gpt-4o",
+    model = "gpt-4o-mini",
   }: {
     messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[];
     tools?: OpenAI.Chat.Completions.ChatCompletionTool[];
@@ -86,8 +86,17 @@ export class DocumentParseService {
                       description:
                         "Array of sections found in the document that help describe the context of the content like section headings and bullet points",
                       items: {
-                        type: "string",
-                        description: "Section name and description",
+                        type: "object",
+                        properties: {
+                          title: {
+                            type: "string",
+                            description: "Title of given section",
+                          },
+                          description: {
+                            type: "string",
+                            description: "Description of the section",
+                          },
+                        },
                       },
                     },
                   },
