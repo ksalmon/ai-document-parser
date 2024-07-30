@@ -1,5 +1,5 @@
 # 📄✨ Document Parser Application
-NextJs app using OpenAI to evaluate txt documents and generate a JSON response on details and the structure of the supplied document. Using Ant.Design and Tailwind for quick frontend development. Implemented server side validation and error handling using the new Router in Next 14. The OpenAI model used if `gpt-4-1106-preview` to allow for larger inputs and files. That model also has better support for the tools and functions that allow for consistent JSON responses every time.
+NextJs app using OpenAI to evaluate txt documents and generate a JSON response on details and the structure of the supplied document. Using Ant.Design and Tailwind for quick frontend development. Implemented server side validation and error handling using the new Router in Next 14. The OpenAI model used if `gpt-4o-mini` to allow for larger inputs and files. That model also has better support for the tools and functions that allow for consistent JSON responses every time. Like anything using untrained AI models, results are sometimes inconsistent.
 
 View it live [here](https://parse.raygun-playground.com/) ✨🪄✨
 
