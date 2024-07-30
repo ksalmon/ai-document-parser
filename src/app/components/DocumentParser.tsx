@@ -63,16 +63,14 @@ export const DocumentParser = () => {
         <Button disabled={!isReady}>Click to Upload</Button>
       </Dragger>
 
-      {typeof window !== "undefined" && (
-        <Modal
-          title="AI JSON Response"
-          open={!!currentJson}
-          onOk={() => setCurrentJson(null)}
-          onCancel={() => setCurrentJson(null)}
-        >
-          {currentJson && <JsonView src={currentJson} />}
-        </Modal>
-      )}
+      <Modal
+        title="AI JSON Response"
+        open={!!currentJson}
+        onOk={() => setCurrentJson(null)}
+        onCancel={() => setCurrentJson(null)}
+      >
+        {currentJson && <JsonView src={currentJson} />}
+      </Modal>
     </div>
   );
 };
