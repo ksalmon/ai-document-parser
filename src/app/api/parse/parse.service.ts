@@ -74,7 +74,7 @@ export class DocumentParseService {
                     entities: {
                       type: "array",
                       description:
-                        "Array of key entities like names, dates, locations and important notes found in the document",
+                        "Array of key entities like names, dates, locations, medical codes with descriptions, and important notes found in the document",
                       items: {
                         type: "string",
                         description:
