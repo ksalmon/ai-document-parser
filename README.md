@@ -30,3 +30,4 @@ bun dev
 ## If I had a few more hours I'd like to...
 - Specs! Broke a cardinal rule of mine by not having any E2E or integration specs for the api router.
 - I'd like to fine tune the ChatCompletion prompt and the function call `extract_document_info`. This is a little too fundamental and inconsistent but works well enough for a beta release. I think it would be better if the prompt had more context but I wanted you to be able to throw any document at this and have it return something helpful. I didn't develop this by just testing it with the given txt file, hopefully not to my discredit.
+- Create a fine-tuned model with training data with OpenAI
