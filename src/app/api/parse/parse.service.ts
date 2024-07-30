@@ -14,7 +14,7 @@ export class DocumentParseService {
   public async createChatCompletion({
     messages,
     tools = [],
-    model = "gpt-4o-mini",
+    model = "gpt-4o",
   }: {
     messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[];
     tools?: OpenAI.Chat.Completions.ChatCompletionTool[];
